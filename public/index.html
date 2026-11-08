@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ANATA RUDRA | Business Solutions</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="#home" class="brand">
+    <img src="images/logo.png" alt="ANATA RUDRA Logo">
+</a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Transform Your Business Challenges Into Opportunities.</h1>
+
+        <p>
+            We help businesses identify problems,
+            discover solutions and achieve growth
+            through AI, technology and expert guidance.
+        </p>
+
+        <a href="#contact" class="btn">Get Business Support</a>
+    </section>
+
+    <section id="about">
+        <h2>About ANATA RUDRA</h2>
+
+        <p>
+            We are a business solutions company
+            dedicated to helping businesses overcome
+            challenges and grow successfully.
+        </p>
+    </section>
+
+    
+<section id="services">
+    <h2>Our Services</h2>
+
+    <div class="services-container">
+
+        <div class="service-card">
+            <h3>Business Analysis</h3>
+            <p>Identify business challenges and discover opportunities for growth.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>AI-Powered Solutions</h3>
+            <p>Use intelligent AI solutions to improve business performance.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Technology Solutions</h3>
+            <p>Build websites, applications and digital systems for your business.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Expert Business Support</h3>
+            <p>Get guidance and practical support from experienced professionals.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="contact">
+    <h2>Let's Solve Your Business Problems</h2>
+
+    <p>
+        Tell us about your business.
+        Our team will help you find the right solution.
+    </p>
+
+    <form id="enquiryForm" class="bussiness-form">
+
+        <div class="form-group">
+            <label for="customerName">Your Full Name</label>
+            <input type="text" id="customerName"
+                   placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="businessName">Business Name</label>
+            <input type="text" id="businessName"
+                   placeholder="Enter your business name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="customerEmail">Email Address</label>
+            <input type="email" id="customerEmail"
+                   placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="problemCategory">Problem Category</label>
+            <select id="problemCategory" required>
+                <option value="">Select a category</option>
+                <option>Low Sales</option>
+                <option>Marketing Problems</option>
+                <option>Financial Management</option>
+                <option>Employee Management</option>
+                <option>Customer Retention</option>
+                <option>Technology Problems</option>
+                <option>Business Growth</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="problemDescription">
+                Describe Your Business Problem
+            </label>
+            <textarea id="problemDescription"
+                      rows="5"
+                      placeholder="Explain your business problem..."
+                      required></textarea>
+        </div>
+
+        <button type="submit" class="btn">
+            Submit Business Problem
+        </button>
+
+    </form>
+</section>
+
+    
+        
+
+    <footer>
+        <p>© 2026 ANATA RUDRA. All Rights Reserved.</p>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>
