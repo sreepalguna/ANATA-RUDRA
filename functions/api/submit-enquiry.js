@@ -44,11 +44,14 @@ export async function onRequestPost(context) {
         );
 
         if (!response.ok) {
-            return Response.json(
-                { error: "Could not save your enquiry." },
-                { status: 500 }
-            );
-        }
+    const errorDetails = await response.text();
+    console.error("Supabase Error:", response.status, errorDetails);
+
+    return Response.json(
+        { error: "Could not save your enquiry." },
+        { status: 500 }
+    );
+}
 
         return Response.json({ message: "Enquiry submitted successfully!" });
 
