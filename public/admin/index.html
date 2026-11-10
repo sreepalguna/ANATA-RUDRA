@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANATA RUDRA | Admin Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #080808;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-box {
+            width: 90%;
+            max-width: 400px;
+            padding: 35px;
+            border: 1px solid #b89442;
+            border-radius: 12px;
+            text-align: center;
+            background: #111;
+        }
+
+        h1 {
+            color: #d4af55;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            background: #222;
+            border: 1px solid #555;
+            border-radius: 6px;
+            color: white;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background: #d4af55;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: #ff7777;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h1>ANATA RUDRA</h1>
+        <p>Administrator Login</p>
+
+        <form id="loginForm">
+            <input type="email" id="email"
+                placeholder="Admin email" required>
+
+            <input type="password" id="password"
+                placeholder="Password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase.js"></script>
+
+<script>
+    const loginForm = document.getElementById("loginForm");
+    const message = document.getElementById("message");
+
+    loginForm.addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        message.textContent = "Checking login...";
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        const { data, error } =
+            await supabaseClient.auth.signInWithPassword({
+                email: email,
+                password: password
+            });
+
+        if (error) {
+            message.textContent = "Login failed. Check your email and password.";
+            return;
+        }
+
+        message.style.color = "#d4af55";
+        message.textContent = "Login successful! Admin authenticated.";
+    });
+</script>
+
+</body>
+</html>
